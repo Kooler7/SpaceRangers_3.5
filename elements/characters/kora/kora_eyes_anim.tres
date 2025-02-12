@@ -1,0 +1,19 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=2]
+
+[ext_resource path="res://assets/sprites/Characters/Kora/KoraFaceEyesClosed.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/Characters/Kora/Kora_Eyes_1.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/Characters/Kora/Kora_Eyes_2.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/Characters/Kora/KoraFaceEyesOpened.png" type="Texture" id=4]
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": false,
+"name": "sit_1_blink",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 1 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "stand_blink",
+"speed": 10.0
+} ]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/IntroLine_4.ogg-70a806b9b0e67623ecf094dd8a31ba4c.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/speech/IntroLine_4.ogg"
+dest_files=[ "res://.import/IntroLine_4.ogg-70a806b9b0e67623ecf094dd8a31ba4c.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

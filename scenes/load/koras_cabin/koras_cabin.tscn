@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/sprites/BackGrounds/Intro/T_CrewCabinHallBG.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/BackGrounds/Intro/T_CrewCabinRightDoorBG.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/BackGrounds/Intro/T_CrewCabinBG.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/BackGrounds/Intro/T_CrewCabinLeftDoorBG.png" type="Texture" id=4]
+[ext_resource path="res://elements/characters/peter/peter.tscn" type="PackedScene" id=5]
+[ext_resource path="res://elements/characters/kora/kora.tscn" type="PackedScene" id=6]
+[ext_resource path="res://elements/props/bonsai_canister/bonsai_canister.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/load/koras_cabin/koras_cabin.gd" type="Script" id=8]
+
+[node name="KorasCabin" type="Node2D"]
+script = ExtResource( 8 )
+
+[node name="Hall" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="LeftDoor" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="RightDoor" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Cabin" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="LeftDoorMove" type="Tween" parent="."]
+
+[node name="RightDoorTween" type="Tween" parent="."]
+
+[node name="BonsaiCanister" parent="." instance=ExtResource( 7 )]
+position = Vector2( 0, 40 )
+
+[node name="Peter" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1480, 560 )
+
+[node name="Kora" parent="." instance=ExtResource( 6 )]
+position = Vector2( 456, 566 )

@@ -1,0 +1,17 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=2]
+
+[ext_resource path="res://assets/sprites/Characters/Kora/Kora_Sits.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/Characters/Kora/KoraAngryPose.png" type="Texture" id=2]
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": false,
+"name": "extreme_angry",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": false,
+"name": "sit_1",
+"speed": 1.0
+} ]

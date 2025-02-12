@@ -1,0 +1,379 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://scenes/ui/settings_menu/settings_menu.gd" type="Script" id=1]
+[ext_resource path="res://scenes/styles/general_button_hover.stylebox" type="StyleBox" id=2]
+[ext_resource path="res://scenes/styles/general_button_idle.stylebox" type="StyleBox" id=3]
+[ext_resource path="res://scenes/styles/general_button_pressed.stylebox" type="StyleBox" id=4]
+[ext_resource path="res://resourses/fonts_resourses/MenuFont.tres" type="DynamicFont" id=5]
+[ext_resource path="res://assets/sprites/UI/SettingsMenu.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/UI/PlusSign.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/UI/FullScreenUnChecked.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/UI/NoSignPressed.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/UI/NoSign.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/UI/PlusSignPressed.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/UI/NoSignHovered.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/UI/MinusSign.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/UI/FullScreenChecked.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/UI/MinusSignPressed.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/UI/MinusSignHovered.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/UI/SettingsTextBlock.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprites/UI/SettingsBar.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/UI/PlusSignHovered.png" type="Texture" id=19]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_color = Color( 0.8, 0.8, 0.8, 0 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color( 0.513726, 0.772549, 0.768627, 0.235294 )
+shadow_size = 14
+
+[node name="SettingsMenu" type="CanvasLayer"]
+pause_mode = 2
+physics_interpolation_mode = 2
+offset = Vector2( 2000, 100 )
+transform = Transform2D( 1, 0, 0, 1, 2000, 100 )
+follow_viewport_enable = true
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 6 )
+
+[node name="MusicVolumeBar" type="TextureProgress" parent="."]
+margin_left = 239.0
+margin_top = 77.0
+margin_right = 496.0
+margin_bottom = 120.0
+mouse_filter = 2
+min_value = -80.0
+max_value = 0.0
+texture_under = ExtResource( 17 )
+texture_over = ExtResource( 17 )
+texture_progress = ExtResource( 18 )
+
+[node name="MusicMinusVolumeBTN" type="TextureButton" parent="MusicVolumeBar"]
+margin_left = -86.0
+margin_top = -18.0
+margin_right = -22.0
+margin_bottom = 46.0
+rect_pivot_offset = Vector2( 32, 32 )
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 15 )
+texture_hover = ExtResource( 16 )
+
+[node name="VolumeMinusBTNBG" type="Panel" parent="MusicVolumeBar/MusicMinusVolumeBTN"]
+visible = false
+show_behind_parent = true
+margin_left = 2.0
+margin_top = 4.0
+margin_right = 61.0
+margin_bottom = 60.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 3 )
+
+[node name="MusicPlusVolumeBTN" type="TextureButton" parent="MusicVolumeBar"]
+margin_left = 274.0
+margin_top = -19.0
+margin_right = 338.0
+margin_bottom = 45.0
+rect_pivot_offset = Vector2( 32, 32 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 11 )
+texture_hover = ExtResource( 19 )
+
+[node name="VolumePlusBTNBG" type="Panel" parent="MusicVolumeBar/MusicPlusVolumeBTN"]
+visible = false
+show_behind_parent = true
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 61.0
+margin_bottom = 61.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 3 )
+
+[node name="MusicVolumeTXT" type="Label" parent="MusicVolumeBar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -35.0
+margin_top = -58.0
+margin_right = 29.0
+margin_bottom = -58.0
+custom_colors/font_color = Color( 0.572549, 0.760784, 0.831373, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "громкость музыки"
+align = 1
+valign = 1
+
+[node name="MusicVolumeBG" type="Panel" parent="MusicVolumeBar"]
+show_behind_parent = true
+margin_left = 4.0
+margin_top = 3.0
+margin_right = 253.0
+margin_bottom = 30.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 3 )
+
+[node name="SoundVolumeBar" type="TextureProgress" parent="."]
+margin_left = 241.0
+margin_top = 202.0
+margin_right = 497.0
+margin_bottom = 235.0
+mouse_filter = 2
+min_value = -80.0
+max_value = 0.0
+texture_under = ExtResource( 17 )
+texture_over = ExtResource( 17 )
+texture_progress = ExtResource( 18 )
+
+[node name="SoundMinusVolumeBTN" type="TextureButton" parent="SoundVolumeBar"]
+margin_left = -86.0
+margin_top = -18.0
+margin_right = -22.0
+margin_bottom = 46.0
+rect_pivot_offset = Vector2( 32, 32 )
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 15 )
+texture_hover = ExtResource( 16 )
+
+[node name="SoundMinusBTNBG" type="Panel" parent="SoundVolumeBar/SoundMinusVolumeBTN"]
+visible = false
+show_behind_parent = true
+margin_left = 2.0
+margin_top = 4.0
+margin_right = 61.0
+margin_bottom = 60.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 3 )
+
+[node name="SoundPlusVolumeBTN" type="TextureButton" parent="SoundVolumeBar"]
+margin_left = 274.0
+margin_top = -19.0
+margin_right = 338.0
+margin_bottom = 45.0
+rect_pivot_offset = Vector2( 32, 32 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 11 )
+texture_hover = ExtResource( 19 )
+
+[node name="SoundPlusBTNBG" type="Panel" parent="SoundVolumeBar/SoundPlusVolumeBTN"]
+visible = false
+show_behind_parent = true
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 61.0
+margin_bottom = 61.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 3 )
+
+[node name="SoundVolumeTXT" type="Label" parent="SoundVolumeBar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -37.0
+margin_top = -57.0
+margin_right = 27.0
+margin_bottom = -57.0
+custom_colors/font_color = Color( 0.572549, 0.760784, 0.831373, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "громкость SFX"
+align = 1
+valign = 1
+
+[node name="SoundVolumeBG" type="Panel" parent="SoundVolumeBar"]
+show_behind_parent = true
+margin_left = 4.0
+margin_top = 3.0
+margin_right = 253.0
+margin_bottom = 30.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 3 )
+
+[node name="ResolutionBar" type="TextureProgress" parent="."]
+margin_left = 240.0
+margin_top = 340.0
+margin_right = 500.0
+margin_bottom = 374.0
+mouse_filter = 2
+min_value = 1.0
+max_value = 4.0
+value = 4.0
+rounded = true
+texture_under = ExtResource( 17 )
+texture_over = ExtResource( 17 )
+texture_progress = ExtResource( 18 )
+
+[node name="ResolutionMinusBTN" type="TextureButton" parent="ResolutionBar"]
+margin_left = -86.0
+margin_top = -18.0
+margin_right = -22.0
+margin_bottom = 46.0
+rect_pivot_offset = Vector2( 32, 32 )
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 15 )
+texture_hover = ExtResource( 16 )
+
+[node name="ResolutionMinusBTNBG" type="Panel" parent="ResolutionBar/ResolutionMinusBTN"]
+visible = false
+show_behind_parent = true
+margin_left = 2.0
+margin_top = 4.0
+margin_right = 61.0
+margin_bottom = 60.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 3 )
+
+[node name="ResolutionPlusBTN" type="TextureButton" parent="ResolutionBar"]
+margin_left = 274.0
+margin_top = -19.0
+margin_right = 338.0
+margin_bottom = 45.0
+rect_pivot_offset = Vector2( 32, 32 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 11 )
+texture_hover = ExtResource( 19 )
+
+[node name="ResolutionPlusBTNBG" type="Panel" parent="ResolutionBar/ResolutionPlusBTN"]
+visible = false
+show_behind_parent = true
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 61.0
+margin_bottom = 61.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 3 )
+
+[node name="ResolutionTXT" type="Label" parent="ResolutionBar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -32.0
+margin_top = -76.0
+margin_right = 32.0
+margin_bottom = -54.0
+custom_colors/font_color = Color( 0.572549, 0.760784, 0.831373, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "разрешение"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="ResolutionBG" type="Panel" parent="ResolutionBar"]
+show_behind_parent = true
+margin_left = 4.0
+margin_top = 3.0
+margin_right = 253.0
+margin_bottom = 30.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 3 )
+
+[node name="CloseBTN" type="TextureButton" parent="."]
+margin_left = 577.0
+margin_top = 608.0
+margin_right = 641.0
+margin_bottom = 672.0
+rect_pivot_offset = Vector2( 32, 32 )
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 12 )
+
+[node name="CloseBTNBG" type="Panel" parent="CloseBTN"]
+visible = false
+show_behind_parent = true
+anchor_top = 0.016
+anchor_bottom = 0.016
+margin_left = 4.0
+margin_top = 1.976
+margin_right = 61.0
+margin_bottom = 59.976
+mouse_filter = 2
+custom_styles/panel = SubResource( 3 )
+
+[node name="FullScreenBTN" type="TextureButton" parent="."]
+margin_left = 193.0
+margin_top = 445.0
+margin_right = 257.0
+margin_bottom = 510.0
+rect_pivot_offset = Vector2( 32, 32 )
+toggle_mode = true
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 14 )
+
+[node name="FullScreenBTNBG" type="Panel" parent="FullScreenBTN"]
+visible = false
+show_behind_parent = true
+anchor_top = 0.016
+anchor_bottom = 0.016
+margin_left = 4.0
+margin_top = 1.976
+margin_right = 61.0
+margin_bottom = 59.976
+mouse_filter = 2
+custom_styles/panel = SubResource( 3 )
+
+[node name="FullScreenBTNTXT" type="Label" parent="FullScreenBTN"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 92.0
+margin_top = 18.0
+margin_right = 217.0
+margin_bottom = -20.0
+custom_colors/font_color = Color( 0.572549, 0.760784, 0.831373, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "полный экран"
+align = 1
+valign = 1
+
+[node name="ConfirmBTN" type="Button" parent="."]
+margin_left = 30.0
+margin_top = 601.0
+margin_right = 290.0
+margin_bottom = 681.0
+rect_pivot_offset = Vector2( 130, 40 )
+focus_mode = 0
+custom_fonts/font = ExtResource( 5 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 3 )
+text = "СОХРАНИТЬ"
+
+[node name="ConfirmBTNBG" type="Panel" parent="ConfirmBTN"]
+visible = false
+show_behind_parent = true
+margin_left = 9.0
+margin_top = 9.0
+margin_right = 251.0
+margin_bottom = 72.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 3 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="mouse_entered" from="MusicVolumeBar/MusicMinusVolumeBTN" to="." method="_on_MusicMinusVolumeBTN_mouse_entered"]
+[connection signal="mouse_exited" from="MusicVolumeBar/MusicMinusVolumeBTN" to="." method="_on_MusicMinusVolumeBTN_mouse_exited"]
+[connection signal="pressed" from="MusicVolumeBar/MusicMinusVolumeBTN" to="." method="_on_MusicMinusVolumeBTN_pressed"]
+[connection signal="mouse_entered" from="MusicVolumeBar/MusicPlusVolumeBTN" to="." method="_on_MusicPlusVolumeBTN_mouse_entered"]
+[connection signal="mouse_exited" from="MusicVolumeBar/MusicPlusVolumeBTN" to="." method="_on_MusicPlusVolumeBTN_mouse_exited"]
+[connection signal="pressed" from="MusicVolumeBar/MusicPlusVolumeBTN" to="." method="_on_MusicPlusVolumeBTN_pressed"]
+[connection signal="mouse_entered" from="SoundVolumeBar/SoundMinusVolumeBTN" to="." method="_on_SoundMinusVolumeBTN_mouse_entered"]
+[connection signal="mouse_exited" from="SoundVolumeBar/SoundMinusVolumeBTN" to="." method="_on_SoundMinusVolumeBTN_mouse_exited"]
+[connection signal="pressed" from="SoundVolumeBar/SoundMinusVolumeBTN" to="." method="_on_SoundMinusVolumeBTN_pressed"]
+[connection signal="mouse_entered" from="SoundVolumeBar/SoundPlusVolumeBTN" to="." method="_on_SoundPlusVolumeBTN_mouse_entered"]
+[connection signal="mouse_exited" from="SoundVolumeBar/SoundPlusVolumeBTN" to="." method="_on_SoundPlusVolumeBTN_mouse_exited"]
+[connection signal="pressed" from="SoundVolumeBar/SoundPlusVolumeBTN" to="." method="_on_SoundPlusVolumeBTN_pressed"]
+[connection signal="mouse_entered" from="ResolutionBar/ResolutionMinusBTN" to="." method="_on_ResolutionMinusBTN_mouse_entered"]
+[connection signal="mouse_exited" from="ResolutionBar/ResolutionMinusBTN" to="." method="_on_ResolutionMinusBTN_mouse_exited"]
+[connection signal="pressed" from="ResolutionBar/ResolutionMinusBTN" to="." method="_on_ResolutionMinusBTN_pressed"]
+[connection signal="mouse_entered" from="ResolutionBar/ResolutionPlusBTN" to="." method="_on_ResolutionPlusBTN_mouse_entered"]
+[connection signal="mouse_exited" from="ResolutionBar/ResolutionPlusBTN" to="." method="_on_ResolutionPlusBTN_mouse_exited"]
+[connection signal="pressed" from="ResolutionBar/ResolutionPlusBTN" to="." method="_on_ResolutionPlusBTN_pressed"]
+[connection signal="mouse_entered" from="CloseBTN" to="." method="_on_CloseBTN_mouse_entered"]
+[connection signal="mouse_exited" from="CloseBTN" to="." method="_on_CloseBTN_mouse_exited"]
+[connection signal="pressed" from="CloseBTN" to="." method="_on_CloseBTN_pressed"]
+[connection signal="mouse_entered" from="FullScreenBTN" to="." method="_on_FullScreenBTN_mouse_entered"]
+[connection signal="mouse_exited" from="FullScreenBTN" to="." method="_on_FullScreenBTN_mouse_exited"]
+[connection signal="toggled" from="FullScreenBTN" to="." method="_on_FullScreenBTN_toggled"]
+[connection signal="mouse_entered" from="ConfirmBTN" to="." method="_on_ConfirmBTN_mouse_entered"]
+[connection signal="mouse_exited" from="ConfirmBTN" to="." method="_on_ConfirmBTN_mouse_exited"]
+[connection signal="pressed" from="ConfirmBTN" to="." method="_on_ConfirmBTN_pressed"]

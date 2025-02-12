@@ -1,0 +1,186 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/ui/dialogue_menu/dialogue_menu.gd" type="Script" id=1]
+[ext_resource path="res://resourses/fonts_resourses/DialogueDynamicFont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/sprites/UI/NameBar.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/UI/DialogueBar.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/UI/ForwardButtonDisabled.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/UI/ForwardButton.png" type="Texture" id=7]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_color = Color( 0.8, 0.8, 0.8, 0 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color( 0.513726, 0.772549, 0.768627, 0.235294 )
+shadow_size = 14
+
+[node name="DialogueMenu" type="CanvasLayer"]
+follow_viewport_enable = true
+script = ExtResource( 1 )
+
+[node name="DialogueBar" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -940.0
+margin_top = -240.0
+margin_right = 941.0
+margin_bottom = -20.0
+texture = ExtResource( 5 )
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="DialogueTXT" type="Label" parent="DialogueBar"]
+margin_left = 29.0
+margin_top = 25.0
+margin_right = 1715.0
+margin_bottom = 195.0
+custom_fonts/font = ExtResource( 3 )
+text = "Text"
+autowrap = true
+
+[node name="NameBar" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -186.0
+margin_top = -323.0
+margin_right = 186.0
+margin_bottom = -246.0
+texture = ExtResource( 4 )
+
+[node name="NameTXT" type="Label" parent="NameBar"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -58.0
+margin_top = -26.0
+margin_right = 58.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 3 )
+text = "Name"
+align = 1
+
+[node name="NextBTN" type="TextureButton" parent="."]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -188.0
+margin_top = -87.0
+margin_right = -38.0
+margin_bottom = -37.0
+rect_pivot_offset = Vector2( 75, 25 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 7 )
+texture_disabled = ExtResource( 6 )
+
+[node name="NextBG" type="Panel" parent="NextBTN"]
+visible = false
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_styles/panel = SubResource( 1 )
+
+[node name="OptionBox" type="NinePatchRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -245.0
+margin_top = -315.0
+margin_right = 245.0
+patch_margin_left = 37
+patch_margin_top = 38
+patch_margin_right = 38
+patch_margin_bottom = 38
+
+[node name="Option_1BTN" type="TextureButton" parent="OptionBox"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -215.0
+margin_top = 52.0
+margin_right = 225.0
+margin_bottom = 122.0
+
+[node name="Option_1BG" type="Panel" parent="OptionBox/Option_1BTN"]
+visible = false
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -7.0
+margin_top = 3.0
+margin_right = -1.0
+margin_bottom = 3.0
+mouse_filter = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_styles/panel = SubResource( 1 )
+
+[node name="Option_1TXT" type="Label" parent="OptionBox/Option_1BTN"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -28.5
+margin_right = 202.0
+margin_bottom = 28.5
+custom_fonts/font = ExtResource( 3 )
+text = "Option_1"
+valign = 1
+
+[node name="Option_2BTN" type="TextureButton" parent="OptionBox"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -215.0
+margin_top = 196.0
+margin_right = 225.0
+margin_bottom = 266.0
+
+[node name="Option_2BG" type="Panel" parent="OptionBox/Option_2BTN"]
+visible = false
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -7.0
+margin_top = 3.0
+margin_right = -1.0
+margin_bottom = 3.0
+mouse_filter = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_styles/panel = SubResource( 1 )
+
+[node name="Option_2TXT" type="Label" parent="OptionBox/Option_2BTN"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -28.5
+margin_right = 202.0
+margin_bottom = 28.5
+custom_fonts/font = ExtResource( 3 )
+text = "Option_2"
+valign = 1
+
+[node name="Options" type="Tween" parent="."]
+
+[connection signal="mouse_entered" from="NextBTN" to="." method="_on_NextBTN_mouse_entered"]
+[connection signal="mouse_exited" from="NextBTN" to="." method="_on_NextBTN_mouse_exited"]
+[connection signal="pressed" from="NextBTN" to="." method="_on_NextBTN_pressed"]
+[connection signal="mouse_entered" from="OptionBox/Option_1BTN" to="." method="_on_Option_1BTN_mouse_entered"]
+[connection signal="mouse_exited" from="OptionBox/Option_1BTN" to="." method="_on_Option_1BTN_mouse_exited"]
+[connection signal="pressed" from="OptionBox/Option_1BTN" to="." method="_on_Option_1BTN_pressed"]
+[connection signal="mouse_entered" from="OptionBox/Option_2BTN" to="." method="_on_Option_2BTN_mouse_entered"]
+[connection signal="mouse_exited" from="OptionBox/Option_2BTN" to="." method="_on_Option_2BTN_mouse_exited"]
+[connection signal="pressed" from="OptionBox/Option_2BTN" to="." method="_on_Option_2BTN_pressed"]

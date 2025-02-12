@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://resourses/fonts_resourses/DialogueDynamicFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scenes/load/interrigation_room/interrogation_room.gd" type="Script" id=2]
+[ext_resource path="res://elements/characters/peter/peter.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/sprites/BackGrounds/Load/InterrogationRoom.png" type="Texture" id=5]
+
+[node name="InterrogationRoom" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+margin_right = 1920.0
+margin_bottom = 1080.0
+color = Color( 0.988235, 0.027451, 0.027451, 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 478.0
+margin_top = 186.0
+margin_right = 1340.0
+margin_bottom = 270.0
+custom_fonts/font = ExtResource( 1 )
+text = "Intro_Scene_3"
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Peter" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1546, 568 )
+
+[node name="Peter2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1114, 572 )

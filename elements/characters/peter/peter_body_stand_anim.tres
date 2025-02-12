@@ -1,0 +1,17 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=2]
+
+[ext_resource path="res://assets/sprites/Characters/Peter/PeterBodyNeutralPose.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/Characters/Peter/PeterBodyCrossArmsPose.png" type="Texture" id=2]
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "cross_arms_pose",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "neutral_pose",
+"speed": 1.0
+} ]

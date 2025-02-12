@@ -1,0 +1,105 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "Character",
+"language": "GDScript",
+"path": "res://static_classes/character_class.gd"
+}, {
+"base": "Node2D",
+"class": "StoryScene",
+"language": "GDScript",
+"path": "res://static_classes/scene_class/story_scene_class.gd"
+}, {
+"base": "CanvasLayer",
+"class": "UI",
+"language": "GDScript",
+"path": "res://static_classes/ui_class.gd"
+}, {
+"base": "Resource",
+"class": "game_flow_class",
+"language": "GDScript",
+"path": "res://resourses/game_flow/game_flow.gd"
+}, {
+"base": "Resource",
+"class": "intro_story",
+"language": "GDScript",
+"path": "res://resourses/dialogues/intro_story/intro_story.gd"
+}, {
+"base": "Resource",
+"class": "koras_cabin_story",
+"language": "GDScript",
+"path": "res://resourses/dialogues/kora's_cabin_story/kora's_cabin_story.gd"
+}, {
+"base": "Resource",
+"class": "load_game_story",
+"language": "GDScript",
+"path": "res://resourses/dialogues/interrogation_room_story/load_game_story.gd"
+}, {
+"base": "Resource",
+"class": "resume_game_story",
+"language": "GDScript",
+"path": "res://resourses/dialogues/interrogation_room_story/resume_game_story.gd"
+} ]
+_global_script_class_icons={
+"Character": "",
+"StoryScene": "",
+"UI": "",
+"game_flow_class": "",
+"intro_story": "",
+"koras_cabin_story": "",
+"load_game_story": "",
+"resume_game_story": ""
+}
+
+[application]
+
+config/name="Prologue_VN"
+run/main_scene="res://Scenes/game/game.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+Events="*res://core/Events.gd"
+Settings="*res://core/Settings.gd"
+Globals="*res://core/Globals.gd"
+MusicAndSounds="*res://core/MusicAndSounds.gd"
+DialogueManager="res://core/DialogueManager.gd"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/size/resizable=false
+window/stretch/mode="2d"
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+
+[input]
+
+skip={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_environment="res://default_env.tres"

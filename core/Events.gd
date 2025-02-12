@@ -1,0 +1,34 @@
+extends Node
+
+#Dialogue
+signal option_pressed
+signal change_text_called
+signal next_btn_pressed
+
+
+#ScenesAndScreens
+signal scene_ready
+signal change_scene_called
+signal change_panel_called
+signal change_game_mode_called
+
+
+#General_character
+signal pose_called
+
+#Arthur_character
+signal arthur_toggle_fading_called
+
+#Kora_character
+signal kora_toggle_visibility_called
+signal kora_toggle_fading_called
+signal kora_toggle_activate_called
+signal custom_pose_called
+
+#Peter_character
+signal peter_toggle_visibility_called
+signal peter_toggle_fading_called
+signal peter_toggle_activate_called
+
+
+signal activate_environment

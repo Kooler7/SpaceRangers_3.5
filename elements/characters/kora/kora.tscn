@@ -1,0 +1,91 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://elements/characters/kora/kora.gd" type="Script" id=1]
+[ext_resource path="res://elements/characters/kora/kora_custom_poses_anim.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://elements/characters/kora/kora_body_stand_anim.tres" type="SpriteFrames" id=3]
+[ext_resource path="res://assets/sprites/Characters/Kora/KoraFaceNeutral.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/Characters/Kora/KoraFaceSmiling.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/Characters/Kora/KoraFaceFrightned.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/Characters/Kora/KoraFaceAngry.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/Characters/Kora/KoraFaceSad.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/Characters/Kora/KoraFaceSuprised.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/Characters/Kora/KoraFaceSullen.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/Characters/Kora/KoraFaceVeryHappy.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/Characters/Kora/KoraFaceVeryAngry.png" type="Texture" id=12]
+[ext_resource path="res://elements/characters/kora/kora_eyes_anim.tres" type="SpriteFrames" id=13]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 7 ) ],
+"loop": false,
+"name": "face_angry",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": false,
+"name": "face_frightned",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": false,
+"name": "face_neutral",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": false,
+"name": "face_sad",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": false,
+"name": "face_smiling",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": false,
+"name": "face_sullen",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": false,
+"name": "face_suprised",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": false,
+"name": "face_very_angry",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": false,
+"name": "face_very_happy",
+"speed": 1.0
+} ]
+
+[node name="Kora" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="FadeOut" type="Tween" parent="."]
+
+[node name="Blink" type="Timer" parent="."]
+one_shot = true
+
+[node name="Sprites" type="Node2D" parent="."]
+scale = Vector2( 0.7, 0.7 )
+
+[node name="Body" type="AnimatedSprite" parent="Sprites"]
+frames = ExtResource( 3 )
+animation = "neutral_pose"
+
+[node name="Face" type="AnimatedSprite" parent="Sprites"]
+z_index = 1
+frames = SubResource( 1 )
+animation = "face_neutral"
+
+[node name="CustomPoses" type="AnimatedSprite" parent="Sprites"]
+frames = ExtResource( 2 )
+animation = "extreme_angry"
+
+[node name="Eyes" type="AnimatedSprite" parent="Sprites"]
+z_index = 2
+frames = ExtResource( 13 )

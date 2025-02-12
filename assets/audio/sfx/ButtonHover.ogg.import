@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ButtonHover.ogg-fb397baabf0f1741b480c5a19b2d6f17.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/ButtonHover.ogg"
+dest_files=[ "res://.import/ButtonHover.ogg-fb397baabf0f1741b480c5a19b2d6f17.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

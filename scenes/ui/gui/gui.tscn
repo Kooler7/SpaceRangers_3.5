@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/ui/game_menu/game_menu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/ui/settings_menu/settings_menu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/ui/about_menu/about_menu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/ui/exit_menu/exit_menu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/ui/home_menu/home_menu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/ui/gui/gui.gd" type="Script" id=8]
+[ext_resource path="res://scenes/ui/main_menu/main_menu.tscn" type="PackedScene" id=10]
+
+[node name="GUI" type="CanvasLayer"]
+pause_mode = 2
+physics_interpolation_mode = 2
+script = ExtResource( 8 )
+
+[node name="MainMenu" parent="." instance=ExtResource( 10 )]
+
+[node name="GameMenu" parent="." instance=ExtResource( 1 )]
+follow_viewport_enable = false
+
+[node name="SettingsMenu" parent="." instance=ExtResource( 2 )]
+follow_viewport_enable = false
+
+[node name="AboutMenu" parent="." instance=ExtResource( 3 )]
+follow_viewport_enable = false
+
+[node name="ExitMenu" parent="." instance=ExtResource( 4 )]
+follow_viewport_enable = false
+
+[node name="HomeMenu" parent="." instance=ExtResource( 5 )]
+follow_viewport_enable = false

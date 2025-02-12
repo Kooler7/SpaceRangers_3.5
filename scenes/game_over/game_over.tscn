@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://resourses/fonts_resourses/DialogueDynamicFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scenes/game_over/game_over.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts_files/PressStart2P-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/sprites/BackGrounds/GameOver/GameOverBG.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 63
+outline_size = 2
+font_data = ExtResource( 3 )
+
+[node name="Game_Over" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -441.0
+margin_top = -290.0
+margin_right = 441.0
+margin_bottom = -191.0
+custom_colors/font_color = Color( 0.0901961, 0.803922, 0.0862745, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "ИГРА ЗАКОНЧЕНА"
+
+[node name="Label2" type="Label" parent="TextureRect"]
+anchor_bottom = 0.5
+margin_left = 200.0
+margin_top = 736.0
+margin_right = 1092.0
+margin_bottom = 428.0
+custom_fonts/font = ExtResource( 1 )
+text = "Кору разжаловали и доставили в ближайший космопорт. Теперь она отправляется домой крутить хвосты свинобразам."
+align = 1
+autowrap = true
